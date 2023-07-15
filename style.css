@@ -401,7 +401,10 @@ span{
 }
 
 .projects-box .projects-content .tags .tag {
-    margin: 0 3px 0 3px;
+    padding-top: 0;
+    margin: 3px;
+    background: var(--second-bg-color);
+    margin-top: 3px;
 }
 
 .projects-box .projects-content::before{
