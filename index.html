@@ -8,8 +8,7 @@
     <link rel="icon" href="favicon.png" type="image/png">
     <!-- box icons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
   <body>
 
@@ -52,7 +51,7 @@
         <span class="animate" style="--i:6;"></span>
       </div>
       <div class="home-imgHover"></div>
-      <img src="header.svg" class="banner-img" alt="">
+      <img data-aos="fade-left" src="header.svg" class="banner-img" alt="">
       <span class="animate home-img" style="--i:7;"></span>
     </section>
     <section class="about" id="about">
@@ -85,7 +84,7 @@
             <div class="projects-content">
               <div class="content">
                 <div class="year"><i class='bx bx-calendar' ></i>  2021 - August</div>
-                <a href="https://apps.apple.com/us/app/guidebook-kyrgyzstan/id1575382810" target="_blank"><h3>iOS App - GuideBook of Kyrgyzstan</h3></a>
+                <a href="https://apps.apple.com/us/app/guidebook-kyrgyzstan/id1575382810" target="_blank"><h3>GuideBook of Kyrgyzstan | iOS App</h3></a>
                 <p>The app is informational source for tourists about the most attractive places of Kyrgyzstan and works on django (rest framework) server</p>
                 <h1 class="tags">
                   <p class="tag">#SwiftUI</p>
@@ -102,7 +101,7 @@
             <div class="projects-content">
               <div class="content">
                 <div class="year"><i class='bx bx-calendar' ></i>  2022 - January</div>
-                <a href="https://central-asia.live/" target="_blank"><h3>Website - GuideBook of Kyrgyzstan</h3></a>
+                <a href="https://central-asia.live/" target="_blank"><h3>GuideBook of Kyrgyzstan | Website</h3></a>
                 <p>The website is informational source for tourists about the most attractive places of Kyrgyzstan and serves as a server for iOS and Android apps</p>
                 <h1 class="tags">
                   <p class="tag">#django</p>
@@ -126,7 +125,7 @@
             <div class="projects-content">
               <div class="content">
                 <div class="year"><i class='bx bx-calendar' ></i>  2022 - November</div>
-                <a href="https://play.google.com/store/apps/details?id=com.anvarinho.guidebook" target="_blank"><h3>Android App - GuideBook of Kyrgyzstan</h3></a>
+                <a href="https://play.google.com/store/apps/details?id=com.anvarinho.guidebook" target="_blank"><h3>GuideBook of Kyrgyzstan | Android App</h3></a>
                 <p>The app is informational source for tourists about the most attractive places of Kyrgyzstan and works on django (rest framework) server</p>
                 <h1 class="tags">
                   <p class="tag">#jetpack-compose</p>
@@ -152,7 +151,7 @@
             <div class="projects-content">
               <div class="content">
                 <div class="year"><i class='bx bx-calendar' ></i>  2023 - January</div>
-                <a href="https://wecan.kg/" target="_blank"><h3>Website | WeCan</h3></a>
+                <a href="https://wecan.kg/" target="_blank"><h3>WeCan | Website</h3></a>
                 <p>The website is search service for masters of household purposes and works as a server for iOS and Android apps</p>
                 <h1 class="tags">
                   <p class="tag">#django</p>
@@ -173,7 +172,7 @@
             <div class="projects-content">
               <div class="content">
                 <div class="year"><i class='bx bx-calendar' ></i>  2023 - June</div>
-                <a href="https://apps.apple.com/us/app/wecan-%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81-%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%B0-%D0%BC%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%BE%D0%B2/id6451155875" target="_blank"><h3>iOS App - WeCan</h3></a>
+                <a href="https://apps.apple.com/us/app/wecan-%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81-%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%B0-%D0%BC%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%BE%D0%B2/id6451155875" target="_blank"><h3>WeCan | iOS App</h3></a>
                 <p>The app is a client for search service for masters of household purposes and works on django (rest framework) server</p>
                 <h1 class="tags">
                   <p class="tag">#SwiftUI</p>
@@ -191,7 +190,7 @@
             <div class="projects-content">
               <div class="content">
                 <div class="year"><i class='bx bx-calendar' ></i>  2023 - July</div>
-                <a href="https://play.google.com/store/apps/details?id=com.anvarinho.wecan" target="_blank"><h3>Android App - WeCan</h3></a>
+                <a href="https://play.google.com/store/apps/details?id=com.anvarinho.wecan" target="_blank"><h3>WeCan | Android App</h3></a>
                 <p>The app is a client for search service for masters of household purposes and works on django (rest framework) server</p>
                 <h1 class="tags">
                   <p class="tag">#jetpack-compose</p>
@@ -326,6 +325,10 @@
         <span class="animate scroll" style="--i:3;"></span>
       </div>
     </footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     <script src="script.js"></script>
     <!-- <script>
       AOS.init();
