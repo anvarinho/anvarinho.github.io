@@ -395,6 +395,15 @@ span{
     padding-left: 2rem;
 }
 
+.projects-box .projects-content .tags{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.projects-box .projects-content .tags .tag {
+    margin: 0 3px 0 3px;
+}
+
 .projects-box .projects-content::before{
     content: '';
     position: absolute;
@@ -441,8 +450,9 @@ span{
     padding-right: .5rem;
 }
 
-.projects-content .content h3{
+.projects-content .content a h3{
     font-size: 2rem;
+    color: var(--text-color);
 }
 
 .projects-content .content p{
