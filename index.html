@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="I'm a passionate developer with a strong focus on development. I love crafting beautiful and functional Services that deliver an exceptional user experience. With expertise in Web-Services, iOS and Android Apps, I strive to create innovative solutions that make a positive impact. Let's bring your ideas to life!"/>
-    <meta name="twitter:card" content="summary" />
+    <!-- <meta name="twitter:card" content="summary" /> -->
     <meta name="twitter:site" content="@anvarinho" />
     <meta name="twitter:title" content="Anvar Jumabaev | Portfolio" />
     <meta name="twitter:description" content="I'm a passionate developer with a strong focus on development. I love crafting beautiful and functional Services that deliver an exceptional user experience. With expertise in Web-Services, iOS and Android Apps, I strive to create innovative solutions that make a positive impact. Let's bring your ideas to life!" />
@@ -290,15 +290,16 @@
 
     <section class="contact" id="contact">
       <h2 class="heading">Contact <span>Me</span><span class="animate scroll" style="--i:1;"></span></h2>
-      <form action="#">
+      <!-- <form action="#"> -->
+      <form id="contactForm" action="#" onsubmit="sendEmail(event); return false;">
 
         <div class="input-box">
           <div class="input-field">
-            <input type="text" placeholder="Full Name" required>
+            <input type="text" name="fullName" placeholder="Full Name" required>
             <span class="focus"></span>
           </div>
           <div class="input-field">
-            <input type="text" placeholder="Email Address" required>
+            <input type="text" name="emailAddress" placeholder="Email Address" required>
             <span class="focus"></span>
           </div>
           <span class="animate scroll" style="--i:3;"></span>
@@ -306,30 +307,32 @@
 
         <div class="input-box">
           <div class="input-field">
-            <input type="number" placeholder="Mobile Number" required>
+            <input type="number" name="phoneNumber" placeholder="Mobile Number" required>
             <span class="focus"></span>
           </div>
           <div class="input-field">
-            <input type="text" placeholder="Email Subject" required>
+            <input type="text" name="emailSubject" placeholder="Email Subject" required>
             <span class="focus"></span>
           </div>
           <span class="animate scroll" style="--i:5;"></span>
         </div>
         <div class="textarea-field">
-          <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
+          <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
           <span class="focus"></span>
           <span class="animate scroll" style="--i:7;"></span>
         </div>
 
         <div class="btn-box btns">
           <button type="submit" class="btn">Submit</button>
+          <!-- <a href="mailto:anvarinho@gmail.com?subject=Tour&body=Hello,%0A%0AThis is the body of the email.">Send Email</a> -->
           <span class="animate scroll" style="--i:9;"></span>
         </div>
       </form>
     </section>
     <footer class="footer">
       <div class="footer-text">
-        <p><span>anvarinho</span> &copy; 2023</p>
+        <p><span>anvarinho</span> &copy; 2024</p>
+        <!-- <p><span id="authorName">anvarinho</span> &copy; <span id="currentYear"></span></p> -->
         <span class="animate scroll" style="--i:1;"></span>
       </div>
       <div class="footer-iconTop">
@@ -342,6 +345,34 @@
       AOS.init();
     </script>
     <script src="script.js"></script>
+    <script>
+      function sendEmail(event) {
+      event.preventDefault(); // Prevent the default form submission behavior
+
+      const fullNameInput = document.querySelector('input[name="fullName"]');
+      console.log('fullNameInput:', fullNameInput);
+      const emailAddressInput = document.querySelector('input[name="emailAddress"]');
+      const phoneNumberInput = document.querySelector('input[name="phoneNumber"]');
+      const emailSubjectInput = document.querySelector('input[name="emailSubject"]');
+      const messageTextarea = document.querySelector('textarea[name="message"]');
+
+      // Check if any of the form elements are null
+      if (!fullNameInput || !emailAddressInput || !emailSubjectInput || !messageTextarea) {
+        console.error('One or more form elements are not found.');
+        return;
+      }
+
+      const fullName = encodeURIComponent(fullNameInput.value);
+      const emailAddress = encodeURIComponent(emailAddressInput.value);
+      const phoneNumber = encodeURIComponent(phoneNumberInput.value)
+      const emailSubject = encodeURIComponent(emailSubjectInput.value);
+      const message = encodeURIComponent(messageTextarea.value);
+
+      const mailtoLink = `mailto:${emailAddress}?subject=${emailSubject}&body=${message}%0A%0AFrom: ${fullName} <%20${emailAddress}>%0APhone: +${phoneNumber}`;
+      // const mailtoLink = `mailto:${emailAddress}?subject=${emailSubject}&body=${message}%0A%0AFrom: ${fullName} <%20${emailAddress}>`;
+      window.location.href = mailtoLink;
+    }
+    </script>
     <!-- <script>
       AOS.init();
     </script> -->

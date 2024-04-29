@@ -7,6 +7,11 @@ menuIcon.onclick = () => {
     navbar.classList.toggle('active');
 }
 
+// const currentYear = new Date().getFullYear();
+
+// // Update the text content of the element with the current year
+// document.getElementById("currentYear").textContent = currentYear;
+
 
 // scroll sections
 let sections = document.querySelectorAll('section');
