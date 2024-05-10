@@ -368,7 +368,7 @@
       const emailSubject = encodeURIComponent(emailSubjectInput.value);
       const message = encodeURIComponent(messageTextarea.value);
 
-      const mailtoLink = `mailto:${emailAddress}?subject=${emailSubject}&body=${message}%0A%0AFrom: ${fullName} <%20${emailAddress}>%0APhone: +${phoneNumber}`;
+      const mailtoLink = `mailto:anvarinho@gmail.com?subject=${emailSubject}&body=${message}%0A%0AFrom: ${fullName} <%20${emailAddress}>%0APhone: +${phoneNumber}`;
       // const mailtoLink = `mailto:${emailAddress}?subject=${emailSubject}&body=${message}%0A%0AFrom: ${fullName} <%20${emailAddress}>`;
       window.location.href = mailtoLink;
     }
