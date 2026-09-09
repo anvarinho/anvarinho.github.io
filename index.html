@@ -22,6 +22,8 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+  <div class="ambient-light" aria-hidden="true"><span></span><span></span></div>
+  <button class="motion-toggle" type="button" aria-pressed="true" hidden><span class="motion-bars" aria-hidden="true"><i></i><i></i><i></i></span><span class="motion-label">Motion on</span></button>
   <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
     <symbol id="external" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></symbol>
@@ -32,7 +34,7 @@
   </svg>
   <header class="header">
     <div class="container header-inner">
-      <a class="logo" href="#home" aria-label="Anvarinho home"><span class="logo-mark">a<span>.</span></span>anvarinho<span class="logo-dot">.</span></a>
+      <a class="logo" href="#home" aria-label="Anvarinho home">anvarinho<span class="logo-dot">.</span></a>
       <button class="menu-toggle" aria-expanded="false" aria-controls="navigation" aria-label="Open navigation"><span></span><span></span></button>
       <nav id="navigation" class="navigation" aria-label="Main navigation">
         <a href="#home" class="active" aria-current="location">Home</a><a href="#projects">Work</a><a href="#about">About</a><a href="#skills">Stack</a><a href="#contact" class="nav-contact">Let’s talk <svg class="icon" aria-hidden="true"><use href="#external"/></svg></a>
@@ -41,6 +43,7 @@
   </header>
   <main id="main">
     <section class="hero container" id="home" aria-labelledby="hero-title">
+      <canvas class="network-canvas" aria-hidden="true"></canvas>
       <div class="hero-copy">
         <p class="eyebrow"><span class="status-dot"></span> FULL STACK & MOBILE DEVELOPER</p>
         <h1 id="hero-title">Ideas into code.<br>Code into <span>experiences.</span></h1>
@@ -50,9 +53,10 @@
         <div class="hero-footnote"><span class="tiny-line"></span> Web. iOS. Android. Built to work together.</div>
       </div>
       <div class="hero-art">
+        <div class="portrait-orbit" aria-hidden="true"></div>
         <div class="portrait-frame">
           <div class="frame-top"><span><span class="status-dot"></span> THE HUMAN BEHIND THE CODE</span><span>01 / AJ</span></div>
-          <img src="assets/anvar-cartoon.png" alt="High-tech cartoon portrait of Anvar Jumabaev with a glowing cyan backdrop" width="1254" height="1254" fetchpriority="high">
+          <div class="portrait-viewport"><img src="assets/anvar-cartoon.png" alt="High-tech cartoon portrait of Anvar Jumabaev with a glowing cyan backdrop" width="1254" height="1254" fetchpriority="high"><div class="portrait-scan" aria-hidden="true"></div><span class="portrait-crosshair crosshair-top" aria-hidden="true"></span><span class="portrait-crosshair crosshair-bottom" aria-hidden="true"></span><span class="portrait-readout" aria-hidden="true">AJ / CREATIVE SYSTEMS <span>● ONLINE</span></span></div>
           <div class="portrait-caption"><span>Anvar Jumabaev<small>Developer · Builder · Problem solver</small></span><span class="portrait-signature" aria-hidden="true">&lt;/&gt;</span></div>
         </div>
         <div class="floating-label"><svg class="icon" aria-hidden="true"><use href="#code"/></svg><span>From concept<br><strong>to connected product.</strong></span></div>
@@ -89,7 +93,7 @@
     </section>
     <section class="contact-section container" id="contact" aria-labelledby="contact-title"><div class="contact-panel">
       <div class="contact-copy"><p class="eyebrow"><span class="status-dot"></span> 04 / WHAT’S NEXT?</p><h2 id="contact-title">Have an idea?<br>Let’s make it <span>real.</span></h2><p>A web product, a mobile app, or a problem worth solving. Tell me what you have in mind.</p><div class="email-row"><a href="mailto:anvarinho@gmail.com">anvarinho@gmail.com</a><button id="copy-email" type="button" aria-label="Copy email address"><svg class="icon" aria-hidden="true"><use href="#copy"/></svg></button></div><p id="copy-status" class="copy-status" role="status"></p><div class="social-links"><a href="https://wa.me/79999858060?text=Hi%20Anvar!" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a><a href="https://www.instagram.com/anvarinho/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div></div>
-      <form id="contact-form" action="mailto:anvarinho@gmail.com" method="get"><div class="form-row"><label>Your name<input name="name" autocomplete="name" placeholder="Alex Smith" required maxlength="100"></label><label>Email address<input name="email" type="email" autocomplete="email" placeholder="alex@example.com" required maxlength="200"></label></div><label>What are you thinking?<textarea name="message" rows="4" placeholder="A little about your idea, the challenge, and what you’d like to build…" required maxlength="3000"></textarea></label><button type="submit" class="button primary">Let’s start a conversation <svg class="icon" aria-hidden="true"><use href="#external"/></svg></button><p class="form-note" id="form-status" role="status">Opens your email app with a draft. You choose when to send.</p></form>
+      <form id="contact-form" action="mailto:anvarinho@gmail.com" method="get"><div class="form-row"><label>Your name<input name="name" autocomplete="name" placeholder="Alex Smith" required maxlength="100"></label><label>Email address<input name="email" type="email" autocomplete="email" placeholder="alex@example.com" required maxlength="200"></label></div><label>What are you thinking?<span class="message-field"><textarea name="message" rows="4" placeholder="A little about your idea, the challenge, and what you’d like to build…" required maxlength="3000"></textarea><span class="terminal-placeholder" aria-hidden="true"><span class="terminal-prompt">&gt; </span><span class="terminal-text"></span><span class="terminal-glyph"></span><span class="terminal-cursor">▌</span></span></span></label><button type="submit" class="button primary">Let’s start a conversation <svg class="icon" aria-hidden="true"><use href="#external"/></svg></button><p class="form-note" id="form-status" role="status">Opens your email app with a draft. You choose when to send.</p></form>
     </div></section>
   </main>
   <footer class="container footer"><a class="logo" href="#home">anvarinho<span class="logo-dot">.</span></a><p>© <span id="year">2026</span> Anvar Jumabaev. Made with intent.</p><a class="back-top" href="#home">Back to top ↑</a></footer>
