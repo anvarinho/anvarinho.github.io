@@ -1,36 +1,23 @@
-# Personal Portfolio Website in React
+# Anvar Jumabaev — Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive personal portfolio for web, iOS, and Android development. Built with HTML, CSS, and vanilla JavaScript; no build step or package installation is needed.
 
-<img width="1266" alt="Screen Shot 2022-06-19 at 2 18 18 PM" src="https://wecan.kg/static/img/anvarinho.github.io.png">
+## Preview
 
-Built using:
+Run `python3 -m http.server 8000` from this directory, then open http://localhost:8000.
 
-- Front-end library: React
-- CSS framework: React-bootstrap
-- CSS animations library: Animate.css
+## Files
 
-In the /personal-portfolio, you can run:
+- `index.html` — page content, project links, metadata, and contact form.
+- `style.css` — responsive layout and visual styles, with reduced-motion support.
+- `script.js` — mobile navigation, active section, email copying, and email drafts.
+- `assets/anvar-cartoon.png` — generated cartoon portrait used in the hero and social previews.
+- `assets/portrait-prompt.txt` — generation method and final image prompt.
 
-### `npm start`
+The contact form opens the visitor’s email application with a draft; it does not send mail or store submissions. The clipboard button requires a secure context (HTTPS or localhost) and provides a fallback message when clipboard access is unavailable.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Fonts use Google Fonts with local sans-serif fallbacks. Icons and project illustrations are built into the page. The original `abouts.jpg` and `header.svg` remain available as source assets.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Publishing
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Serve the repository root with GitHub Pages or another static host. No build output is required.
