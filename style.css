@@ -4,6 +4,8 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:100px}
 body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:15px;line-height:1.7}
+/* Clip decorative transforms without creating a nested scrolling container. */
+main{overflow-x:clip}
 a{color:inherit;text-decoration:none}
 button,input,textarea{font:inherit}
 button,a,input,textarea{-webkit-tap-highlight-color:transparent}
@@ -41,7 +43,7 @@ h1{font-size:clamp(40px,4.6vw,62px);letter-spacing:-3px;line-height:1.1;margin-b
 h1>span{color:var(--cyan)}
 .hero-intro{font-size:19px;color:#c1cbd4;margin-bottom:12px}
 .hero-intro strong{color:var(--text);font-weight:600}
-.wave{color:var(--cyan);margin-left:5px;font-size:22px}
+.wave{color:var(--cyan);margin-left:5px;width:22px;height:22px;vertical-align:-4px}
 .hero-description{color:var(--muted);max-width:455px;line-height:1.9;font-size:14px}
 .button-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
 .button{display:inline-flex;align-items:center;justify-content:center;gap:20px;padding:14px 19px;border-radius:6px;border:1px solid transparent;font-size:12px;font-weight:800;transition:background .2s,transform .2s}
@@ -71,7 +73,8 @@ h1>span{color:var(--cyan)}
 .stack-strip>.container{display:flex;align-items:center;gap:65px;min-height:88px}
 .strip-label{font:9px var(--display);letter-spacing:1.5px;color:var(--muted);white-space:nowrap}
 .strip-tools{display:flex;align-items:center;justify-content:space-between;gap:30px;flex:1;color:#bfccd5;font:500 20px var(--display);letter-spacing:-.6px}
-.strip-tools i{font-style:normal;font-size:16px;color:var(--cyan)}
+.strip-tools>span{display:inline-flex;align-items:center;gap:6px}
+.strip-tools .icon{width:16px;height:16px;color:var(--cyan)}
 
 /* Selected projects */
 .section{padding-block:100px}
@@ -91,7 +94,7 @@ h1>span{color:var(--cyan)}
 .guide-wordmark{position:absolute;top:81px;left:27px;font:600 48px var(--display);letter-spacing:-2px;text-shadow:0 2px 20px #133b4233}
 .guide-wordmark>span{display:block;font:10px var(--body);letter-spacing:5px;margin-top:5px}
 .visual-bottom{position:absolute;bottom:20px;left:25px;right:25px;display:flex;justify-content:space-between;font:10px var(--body);color:#e0f0e5}
-.visual-bottom>span{font-size:18px}
+.visual-bottom .icon{width:18px;height:18px}
 .wecan-visual{background:#252450;color:#edecff}
 .wecan-orbit{position:absolute;width:330px;height:330px;right:-45px;top:-55px;border:1px solid #b6a4ff35;border-radius:50%}
 .orbit-two{width:230px;height:230px;top:-5px;right:5px;background:#8c77de15}
@@ -101,6 +104,8 @@ h1>span{color:var(--cyan)}
 .service-bubble{position:absolute;display:grid;place-items:center;border:1px solid #bbabfd55;border-radius:15px;width:55px;height:55px;font-size:34px;background:#514182;color:#e2d6fd}
 .bubble-one{right:62px;top:50px;transform:rotate(12deg)}
 .bubble-two{right:100px;bottom:47px;transform:rotate(-12deg);width:45px;height:45px;font-size:28px}
+.service-bubble .icon{width:28px;height:28px}
+.bubble-two .icon{width:25px;height:25px}
 .project-body{padding:27px}
 .project-meta{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font:9px var(--display);letter-spacing:1px;margin-bottom:15px}
 .project-meta>span:first-child{color:var(--cyan)}
@@ -113,7 +118,8 @@ h1>span{color:var(--cyan)}
 .project-links>a:first-child{margin-right:auto;color:var(--cyan)}
 .project-links .icon{width:14px;height:14px}
 .project-links a:hover,.project-archive:hover{color:var(--cyan)}
-.project-archive{display:inline-block;font-size:10px;color:var(--muted);margin-top:15px}
+.project-archive{display:inline-flex;align-items:center;gap:5px;font-size:10px;color:var(--muted);margin-top:15px}
+.project-archive .icon,.social-links .icon,.back-top .icon{width:13px;height:13px}
 
 /* About and capabilities */
 .about-section{border-block:1px solid var(--border);background:#0c151f;padding-block:80px}
@@ -144,6 +150,7 @@ h1>span{color:var(--cyan)}
 .email-row .icon{width:15px;height:15px}
 .copy-status{min-height:22px;font-size:10px;color:var(--cyan);margin-top:5px}
 .social-links{display:flex;gap:24px;font-size:11px;color:#b6c6d3;margin-top:15px}
+.social-links a,.back-top{display:inline-flex;align-items:center;gap:5px}
 .social-links a:hover{color:var(--cyan)}
 form{padding-top:5px;min-width:0}
 label{display:block;font-size:11px;font-weight:600;color:#d4dfe7}
@@ -228,8 +235,8 @@ h1>span{background:linear-gradient(110deg,#62e4ec 12%,#b3f9ff 32%,#b5a1fa 48%,#6
 .status-dot{position:relative}
 .status-dot:after{content:'';position:absolute;inset:-4px;border:1px solid #62e4ec88;border-radius:50%;animation:signal-pulse 3s ease-out infinite}
 .wave{display:inline-block;animation:asterisk-turn 14s linear infinite}
-.portrait-orbit{position:absolute;inset:-24px -21px;border:1px solid #62e4ec16;border-radius:50%;z-index:-1;transform:rotate(-24deg);pointer-events:none}
-.portrait-orbit:after{content:'';position:absolute;inset:-1px;border:1px solid transparent;border-top-color:#62e4ec70;border-bottom-color:#aa92ff30;border-radius:50%;animation:orbit-turn 22s linear infinite}
+.portrait-orbit{position:absolute;inset:-24px -21px;border-radius:50%;z-index:-1;overflow:hidden;contain:paint;pointer-events:none;background:#62e4ec16;mask-image:radial-gradient(ellipse closest-side,transparent calc(100% - 2px),#000 calc(100% - 1px))}
+.portrait-orbit:after{content:'';position:absolute;inset:-50%;background:conic-gradient(transparent 0deg,#62e4ec70 80deg,transparent 120deg,transparent 180deg,#aa92ff40 260deg,transparent 300deg);animation:orbit-turn 22s linear infinite}
 .portrait-frame{position:relative;transform:perspective(1000px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg));transition:transform .45s ease-out,box-shadow .45s,border-color .45s}
 .portrait-frame:hover{border-color:#62e4ec80;box-shadow:10px 12px 0 -1px var(--bg),10px 12px 0 0 #34525f,0 0 45px #62e4ec12}
 .portrait-viewport{position:relative;overflow:hidden}
@@ -271,12 +278,14 @@ input,textarea{transition:border-color .25s,box-shadow .25s}
 input:focus,textarea:focus{border-color:#62e4ec80;box-shadow:0 0 20px #62e4ec0d}
 .message-field{position:relative;display:block;margin-top:8px;margin-bottom:20px}
 .message-field textarea{margin:0}
-.terminal-placeholder{display:none;position:absolute;top:13px;left:14px;right:22px;pointer-events:none;font:400 12px/1.85 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.2px;color:#72e6a0;text-shadow:0 0 10px #42ee8030;overflow-wrap:anywhere}
+.terminal-placeholder{display:none;position:absolute;top:13px;left:14px;right:14px;grid-template-columns:1ch minmax(0,1fr);gap:8px;align-items:start;pointer-events:none;font:400 12px/1.85 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:0;text-align:left;color:#72e6a0;text-shadow:0 0 10px #42ee8030}
 .terminal-enhanced textarea:placeholder-shown:not(:focus)::placeholder{color:transparent}
-.terminal-enhanced textarea:placeholder-shown:not(:focus)+.terminal-placeholder{display:block}
+.terminal-enhanced textarea:placeholder-shown:not(:focus)+.terminal-placeholder{display:grid}
 .terminal-prompt{color:#3ab96b}
-.terminal-glyph{color:#c3ffd6;text-shadow:0 0 8px #72ffab}
-.terminal-cursor{color:#90ffb7;animation:terminal-blink 1s steps(1,end) infinite}
+.terminal-line{min-width:0;padding-right:2ch;word-break:break-all}
+.terminal-caret{display:inline-block;position:relative;width:0;height:1em;vertical-align:-.15em;white-space:nowrap;word-break:normal}
+.terminal-glyph{position:absolute;left:0;top:0;width:1ch;height:1.2em;overflow:hidden;line-height:1;color:#c3ffd6;text-shadow:0 0 8px #72ffab}
+.terminal-cursor{position:absolute;left:1ch;top:0;width:1ch;line-height:1;color:#90ffb7;animation:terminal-blink 1s steps(1,end) infinite}
 @keyframes terminal-blink{0%,49%{opacity:1}50%,100%{opacity:0}}
 .motion-toggle{position:fixed;right:20px;bottom:18px;z-index:30;display:flex;align-items:center;gap:9px;background:#101923ed;border:1px solid #38515d;border-radius:30px;padding:10px 14px;color:#c5d6df;font:10px var(--display);letter-spacing:.4px;backdrop-filter:blur(16px);box-shadow:0 4px 20px #0003}
 .motion-toggle[hidden]{display:none}
