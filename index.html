@@ -26,7 +26,7 @@
   <script>try{document.documentElement.dataset.motion=matchMedia('(prefers-reduced-motion: reduce)').matches||localStorage.getItem('portfolio-motion')==='off'?'off':'on'}catch{document.documentElement.dataset.motion='off'}for(const type of ['pageswap','pagereveal'])addEventListener(type,event=>{if(document.documentElement.dataset.motion==='off')event.viewTransition?.skipTransition()});</script>
   <link rel="preload" href="/assets/fonts/space-grotesk-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/manrope-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=toolkit-row-3">
+  <link rel="stylesheet" href="style.css?v=stack-generous-spacing-2">
   <link rel="stylesheet" href="story.css?v=toolkit-row-3">
   <noscript><style>[data-project-preview][hidden]{display:block!important}[data-project-preview] .story-sticky{position:static;height:auto;max-height:none}[data-project-preview]{height:auto}[data-project-preview] *{animation:none!important;transform:none!important;opacity:1!important}</style></noscript>
   <script src="site.js" defer></script>
@@ -82,7 +82,6 @@
         <span class="art-coordinate" aria-hidden="true">CREATIVITY × ENGINEERING</span></div>
       </div>
     </section>
-    <div class="stack-strip"><div class="container"><div class="toolkit-heading"><span class="strip-label">MY EVERYDAY TOOLKIT</span><button class="toolkit-pause" type="button" aria-label="Pause technology logo animation" hidden><span class="toolkit-pause-icon" aria-hidden="true">Ⅱ</span><span class="toolkit-pause-label">Pause</span></button></div><div class="strip-tools"><div class="tech-track"><span class="tech-badge" data-tech="react"><span class="tech-logo" aria-hidden="true"></span><span>React</span></span><span class="tech-badge" data-tech="nextdotjs"><span class="tech-logo" aria-hidden="true"></span><span>Next.js</span></span><span class="tech-badge" data-tech="swift"><span class="tech-logo" aria-hidden="true"></span><span>SwiftUI</span></span><span class="tech-badge" data-tech="kotlin"><span class="tech-logo" aria-hidden="true"></span><span>Kotlin</span></span><span class="tech-badge" data-tech="django"><span class="tech-logo" aria-hidden="true"></span><span>Django</span></span><span class="tech-badge" data-tech="nodedotjs"><span class="tech-logo" aria-hidden="true"></span><span>Node.js</span></span></div></div></div></div>
     <section class="section container" id="projects" aria-labelledby="work-title">
       <div class="section-heading"><div><p class="eyebrow">01 / SELECTED WORK</p><h2 id="work-title">Built with purpose<span>.</span></h2></div><p>Real products. Connected platforms.<br>A few things I’ve brought to life.</p></div>
 
@@ -403,16 +402,23 @@
 </div>
       </section>
     </section>
-    <section class="about-section" id="about" aria-labelledby="about-title"><div class="container about-grid">
-      <div><p class="eyebrow">02 / A LITTLE ABOUT ME</p><h2 id="about-title">Curious by nature.<br>Builder by <span>default.</span></h2><a href="#contact" class="text-link">Get to know me <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+    <section class="about-section" id="about" aria-labelledby="about-title"><div class="container about-content">
+      <div class="about-intro">
+      <p class="eyebrow">02 / A LITTLE ABOUT ME</p>
+      <div class="about-grid">
+      <div class="about-heading"><h2 id="about-title">Curious by nature.<br>Builder by <span>default.</span></h2><a href="#contact" class="text-link">Get to know me <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a></div>
       <div class="about-copy"><p class="large-copy">I enjoy connecting the dots between a good idea, a useful interface, and the systems that make it work.</p><p>My work spans full stack web development and native mobile apps. With GuideBook and WeCan, I’ve built across the whole product: responsive websites, SwiftUI and Kotlin interfaces, REST APIs, and the servers that connect them.</p><p>I care about clear interactions and practical solutions. Whether it’s helping someone explore a new place or find a local professional, the goal is the same: make the next step easier.</p><div class="about-principles"><span><i>01</i> Think about the user</span><span><i>02</i> Connect the pieces</span><span><i>03</i> Keep improving</span></div></div>
-    </div></section>
+      </div>
+      </div>
+      <div class="stack-strip"><div class="container"><div class="toolkit-heading"><span class="strip-label">MY EVERYDAY TOOLKIT</span><button class="toolkit-pause" type="button" aria-label="Pause technology logo animation" hidden><span class="toolkit-pause-icon" aria-hidden="true">Ⅱ</span><span class="toolkit-pause-label">Pause</span></button></div><div class="strip-tools"><div class="tech-track"><span class="tech-badge" data-tech="react"><span class="tech-logo" aria-hidden="true"></span><span>React</span></span><span class="tech-badge" data-tech="nextdotjs"><span class="tech-logo" aria-hidden="true"></span><span>Next.js</span></span><span class="tech-badge" data-tech="swift"><span class="tech-logo" aria-hidden="true"></span><span>SwiftUI</span></span><span class="tech-badge" data-tech="kotlin"><span class="tech-logo" aria-hidden="true"></span><span>Kotlin</span></span><span class="tech-badge" data-tech="django"><span class="tech-logo" aria-hidden="true"></span><span>Django</span></span><span class="tech-badge" data-tech="nodedotjs"><span class="tech-logo" aria-hidden="true"></span><span>Node.js</span></span></div></div></div></div>
+    </div>
+    </section>
     <section class="section container" id="skills" aria-labelledby="skills-title">
       <div class="section-heading"><div><p class="eyebrow">03 / TOOLS OF THE TRADE</p><h2 id="skills-title">The right tools.<br>The complete picture<span>.</span></h2></div><p>From what you see on screen<br>to what happens behind it.</p></div>
       <div class="skills-grid">
-        <article class="skill-card"><svg class="skill-icon icon" aria-hidden="true"><use href="#code"/></svg><span class="skill-number">01</span><h3>Web experiences</h3><p>Responsive interfaces that turn complex features into clear, usable experiences.</p><div class="tags"><span>JavaScript</span><span>React</span><span>Next.js</span><span>HTML &amp; CSS</span></div></article>
-        <article class="skill-card"><svg class="skill-icon icon" aria-hidden="true"><use href="#mobile"/></svg><span class="skill-number">02</span><h3>Native mobile</h3><p>Purpose-built iOS and Android apps, connected to shared services and data.</p><div class="tags"><span>Swift / SwiftUI</span><span>UIKit</span><span><span class="tech-logo" data-tech="kotlin" aria-hidden="true"></span>Kotlin</span><span>Jetpack Compose</span></div></article>
-        <article class="skill-card"><svg class="skill-icon icon" aria-hidden="true"><use href="#server"/></svg><span class="skill-number">03</span><h3>Behind the scenes</h3><p>APIs, databases, and deployments that bring the whole product together.</p><div class="tags"><span>Python / Django</span><span>Node.js</span><span>PostgreSQL</span><span>MongoDB</span><span>Nginx / Linux</span></div></article>
+        <article class="skill-card"><div class="skill-card-top"><svg class="skill-icon icon" aria-hidden="true"><use href="#code"/></svg><span class="skill-number">01</span></div><h3>Web experiences</h3><p>Responsive interfaces that turn complex features into clear, usable experiences.</p><div class="tags"><span>JavaScript</span><span>React</span><span>Next.js</span><span>HTML &amp; CSS</span></div></article>
+        <article class="skill-card"><div class="skill-card-top"><svg class="skill-icon icon" aria-hidden="true"><use href="#mobile"/></svg><span class="skill-number">02</span></div><h3>Native mobile</h3><p>Purpose-built iOS and Android apps, connected to shared services and data.</p><div class="tags"><span>Swift / SwiftUI</span><span>UIKit</span><span><span class="tech-logo" data-tech="kotlin" aria-hidden="true"></span>Kotlin</span><span>Jetpack Compose</span></div></article>
+        <article class="skill-card"><div class="skill-card-top"><svg class="skill-icon icon" aria-hidden="true"><use href="#server"/></svg><span class="skill-number">03</span></div><h3>Behind the scenes</h3><p>APIs, databases, and deployments that bring the whole product together.</p><div class="tags"><span>Python / Django</span><span>Node.js</span><span>PostgreSQL</span><span>MongoDB</span><span>Nginx / Linux</span></div></article>
       </div>
     </section>
     <section class="contact-section container" id="contact" aria-labelledby="contact-title"><div class="contact-panel">
