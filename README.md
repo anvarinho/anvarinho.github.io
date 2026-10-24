@@ -46,7 +46,8 @@ Open [localhost:8000](http://localhost:8000) in your browser.
 | [`sitemap.xml`](sitemap.xml), [`robots.txt`](robots.txt), [`404.html`](404.html) | Discovery and missing-page navigation |
 | [`assets/anvar-cartoon.png`](assets/anvar-cartoon.png) | Illustrated portrait used in the hero and social previews |
 | [`assets/portrait-prompt.txt`](assets/portrait-prompt.txt) | Image generation method and final prompt |
-| [`favicon.svg`](favicon.svg) | Site icon |
+| [`favicon.svg`](favicon.svg), [`favicon.ico`](favicon.ico), [`assets/icons/`](assets/icons/README.md) | Browser, Apple home-screen, Android, and Safari pinned-tab icons |
+| [`site.webmanifest`](site.webmanifest) | Home-screen identity, standalone launch settings, and Work/Contact shortcuts |
 
 ## ✧ Experience highlights
 
